@@ -19,6 +19,7 @@ class Map{
             var dy = event.pageY - start_y;
             this.position_y += dy;
             this.back(event);
+            console.log(this.position_y);
         }
     }
 
@@ -28,6 +29,11 @@ class Map{
             this.element.style.transform = '';
             this.position_y = 0;
         }
+
+        // if(this.position_y < -(1500 +window.innerHeight)){
+        //     this.element.style.transform = 'translateY(' + (-(1500+window.innerHeight)) + 'px)';
+        //     this.position_y = -(1500+window.innerHeight);
+        // }
 
         setTimeout(()=>{this.element.style.transition = '';}, 550);
     }

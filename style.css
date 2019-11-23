@@ -19,6 +19,17 @@ body {
     cursor: grab;
     top:0;
 }
+.name {
+    position: relative;
+    top: -26px;
+    left: -23px;
+    background: white;
+    width: max-content;
+    font-size: 20px;
+    font-weight: 700;
+    visibility: hidden;
+}
+
 .point{
     background:red;
     width: 15px;

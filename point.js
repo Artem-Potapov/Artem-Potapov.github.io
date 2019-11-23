@@ -2,7 +2,8 @@ class Point{
     constructor(element) {
         this.element = element;
         this.is_open=false;
-        this.content=this.element.children[0];
+        this.name=this.element.children[0];
+        this.content=this.element.children[1];
 
         this.init();
     }
@@ -22,6 +23,14 @@ class Point{
         setTimeout(() => {this.to_center()}, 210);
     }
 
+    show_name(){
+        this.name.style.visibility='visible';
+    }
+
+    hide_name(){
+        this.name.style.visibility='hidden';
+    }
+
     close(){
         this.element.style.transform='';
         this.element.style.background='';
@@ -39,6 +48,8 @@ class Point{
                 this.open()
             }
         }
+        this.element.onmouseover = () => {this.show_name()}
+        this.element.onmouseleave = () => {this.hide_name()}
     }
 }
 
