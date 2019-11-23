@@ -1,1 +1,0 @@
-# Artem-Potapov.github.io
