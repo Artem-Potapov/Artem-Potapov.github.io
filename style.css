@@ -1,0 +1,62 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    
+}
+
+.map {
+    background-image: url(images/map.jpg);
+    /* background:green; */
+    width:1500px;
+    height:2174px;
+    margin:0 auto;
+    position: relative;
+    cursor: grab;
+    top:0;
+}
+.point{
+    background:red;
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+    transition: width 0.2s, height 0.2s, background 0.5s, transform 0.2s;
+    position: absolute;
+    cursor: pointer;
+}
+
+.point:hover {
+    background: #900;
+}
+
+.kremlin {
+    left:770px;
+    top:925px;
+}
+
+.content {
+    visibility: hidden;
+    margin: 5px;
+
+}
+
+.content h1 {
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+}
+
+.description {
+    margin: 10px;
+}
+
+.image {
+    display: block;
+    margin: 5px auto;
+    width: 350px;
+    border-radius: 15px;
+}
