@@ -49,6 +49,19 @@ body {
     top:925px;
 }
 
+.tret {
+    left: 795px;
+    top: 1018px;
+}
+
+.pokras_okt {
+    left: 768px;
+    top: 1018px;
+}
+
+.art {
+    background: blue;
+}
 .content {
     visibility: hidden;
     margin: 5px;

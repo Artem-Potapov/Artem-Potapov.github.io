@@ -20,6 +20,7 @@ class Point{
         this.content.style.visibility='visible';
         this.element.style.filter='drop-shadow(0 0 15px rgb(0,0,0,0.7))';
         this.is_open=true;
+        this.element.style.zIndex = '9999';
         setTimeout(() => {this.to_center()}, 210);
     }
 
@@ -37,6 +38,7 @@ class Point{
         this.element.style.width='15px';
         this.element.style.height='15px';
         this.content.style.visibility='hidden';
+        this.element.style.zIndex = '';
         this.is_open=false;
     }
 
@@ -53,4 +55,8 @@ class Point{
     }
 }
 
-var p = new Point(document.getElementsByClassName('point')[0]);
+var points = []
+var points_elements = document.getElementsByClassName('point');
+for (var i = 0; i < points_elements.length; i++){
+    points.push(new Point(points_elements[i]))
+}
