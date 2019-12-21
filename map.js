@@ -36,34 +36,34 @@ class Map{
         //     this.position_y = 0;
         // }
 
-        if(this.position_x < (window.innerWidth - this.element.getBoundingClientRect().width)){
-            var style = this.element.style.transform.split(' ');
-            if(style.length>1) {
-                var y = style[1];
-            } else {
-                var y = style[0];
-            }
-            this.element.style.transform = 'translateX('+(window.innerWidth - this.element.getBoundingClientRect().width )+'px)'+y;
-            this.position_x = window.innerWidth - this.element.getBoundingClientRect().width;
-        }
+        // if(this.position_x < (window.innerWidth - this.element.getBoundingClientRect().width)){
+        //     var style = this.element.style.transform.split(' ');
+        //     if(style.length>1) {
+        //         var y = style[1];
+        //     } else {
+        //         var y = style[0];
+        //     }
+        //     this.element.style.transform = 'translateX('+(window.innerWidth - this.element.getBoundingClientRect().width )+'px)'+y;
+        //     this.position_x = window.innerWidth - this.element.getBoundingClientRect().width;
+        // }
 
-        if(this.position_x > 0){
-            var style = this.element.style.transform.split(' ');
-            if ( style.length > 1) {
-                this.element.style.transform = style[1];
-            } else {
-                this.element.style.transform = '';
-            }
+        // if(this.position_x > 0){
+        //     var style = this.element.style.transform.split(' ');
+        //     if ( style.length > 1) {
+        //         this.element.style.transform = style[1];
+        //     } else {
+        //         this.element.style.transform = '';
+        //     }
             
-            this.position_x = 0;
-        }
+        //     this.position_x = 0;
+        // }
 
         //if(this.position_y < (window.innerHeight - this.element.getBoundingClientRect().height)){
         //     this.element.style.transform = this.element.style.transform.split(' ')[0]+' translateY(' + (window.innerHeight - this.element.getBoundingClientRect().height) + 'px)';
         //     this.position_y = (window.innerHeight - this.element.getBoundingClientRect().height);
        // }
 
-        setTimeout(()=>{this.element.style.transition = '';}, 550);
+       // setTimeout(()=>{this.element.style.transition = '';}, 550);
     }
 }
 
