@@ -59,6 +59,16 @@ body {
     top: 1018px;
 }
 
+.chermyanka {
+    left: 805px;
+    top: 336px;
+}
+
+.moscow-city {
+    left: 510px;
+    top: 245px;
+}
+
 .art {
     background: blue;
 }
@@ -68,11 +78,11 @@ body {
 
 }
 
-.content h1 {
+/* .content h1 {
     display: block;
     margin: 0 auto;
     width: max-content;
-}
+} */
 
 .description {
     margin: 10px;

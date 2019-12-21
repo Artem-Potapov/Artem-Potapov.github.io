@@ -21,11 +21,15 @@ class Point{
         this.element.style.filter='drop-shadow(0 0 15px rgb(0,0,0,0.7))';
         this.is_open=true;
         this.element.style.zIndex = '9999';
+        this.hide_name();
         setTimeout(() => {this.to_center()}, 210);
     }
 
     show_name(){
-        this.name.style.visibility='visible';
+        if(this.is_open === false) {
+            this.name.style.visibility='visible';
+        }
+        
     }
 
     hide_name(){
