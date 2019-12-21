@@ -30,7 +30,7 @@ class Map{
     }
 
     back(event){
-        this.element.style.transition = 'transform 0.5s';
+        //this.element.style.transition = 'transform 0.5s';
         // if(this.position_y > 0){
         //     this.element.style.transform = '';
         //     this.position_y = 0;
