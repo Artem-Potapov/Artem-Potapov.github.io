@@ -1,17 +1,57 @@
-<!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <script src="map.js" defer></script>    
-    <script src="point.js" defer></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="map">
-        {points}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/cyrillic-to-translit-js@latest/dist/bundle.js" defer></script>
+        <script src="map.js" defer></script>    
+        <script src="point.js" defer></script>
+        <title>Интерактивная карта Москвы</title>
+    </head>
+    <body>
+        <h1 style="visibility: hidden; height: 0;">Hello</h1>
+        <div class="map">
+            {points}
+        </div>
+        <div class="control-zoom">
+            <div class="control-zoom__in">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="control-zoom__out">
+                <span></span>
+            </div>
+        </div>
+    <div class="control-add closed">
+        <div class="button closed">
+            <span></span>
+            <span></span>
+        </div>
+        <form action="#" class="add-form closed">
+            <p>
+                <label for="name">Название</label><input type="text" name="name" id="name">
+            </p>
+            <p>
+                <label for="type">Тип</label>
+                <select name="type" id="type">
+                    <option value="dm" selected>Достопримечательность</option>
+                    <option value="park">Парк</option>
+                    <option value="museum">Музей</option>
+                    <option value="art">Арт-объект</option>
+                </select>
+            </p>
+            <p>
+                <p><label for="description">Описание</label></p>
+                <textarea name="description" id="description" cols="40"></textarea>
+            </p>
+            <p>
+                <label for="link">Ссылка на картинку</label><input type="text" name="link" id="link">    
+            </p>
+            <div class="button-point">Указать место</div>
+        </form>
     </div>
+    </body>
+    </html>
 </body>
 </html>

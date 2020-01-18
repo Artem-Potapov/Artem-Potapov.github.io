@@ -2,11 +2,12 @@
     margin:0;
     padding:0;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     overflow: hidden;
-    
+    background: #004F88;
 }
 
 .map {
@@ -15,9 +16,13 @@ body {
     width:1500px;
     height:2174px;
     margin:0 auto;
-    position: relative;
+    position: absolute;
     cursor: grab;
     top:0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: transform 0.25s;
+    filter: grayscale(10%);
 }
 .name {
     position: relative;
@@ -38,10 +43,14 @@ body {
     transition: width 0.2s, height 0.2s, background 0.5s, transform 0.2s;
     position: absolute;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    transform: translate(-50%, -50%);
+    transform-origin: center;
 }
 
 .point:hover {
     background: #900;
+    z-index: 99999;
 }
 
 .kremlin {
@@ -72,6 +81,19 @@ body {
 .art {
     background: blue;
 }
+
+.dm {
+    background: red;
+}
+
+.museum {
+    background: orange;
+}
+
+.park {
+    background: green;
+}
+
 .content {
     visibility: hidden;
     margin: 5px;
@@ -93,4 +115,172 @@ body {
     margin: 5px auto;
     width: 350px;
     border-radius: 15px;
+}
+
+.control-zoom {
+    width: 100px;
+    height: 200px;
+    background: white;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    border-radius: 50px;
+    transform: scale(0.7);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.control-zoom__in, .control-zoom__out {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+    cursor: pointer;
+}
+
+.control-zoom__in {
+    top: 8%;
+}
+
+.control-zoom__out {
+    bottom: 8%;
+}
+
+.control-zoom__in > span, .control-zoom__out > span{
+    position: absolute;
+    background: black;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.control-zoom__in > span:nth-child(1) {
+    width: 60%;
+    height: 5%;
+}
+
+.control-zoom__in > span:nth-child(2) {
+    width: 5%;
+    height: 60%;
+}
+
+.control-zoom__out > span {
+    width: 60%;
+    height: 5%;
+}
+
+.control-zoom__in:hover , .control-zoom__out:hover{
+    background:rgb(228, 228, 228);
+}
+
+.control-add.closed {
+    position: fixed;
+    width: 60px;
+    height: 50px;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.control-add {
+    transition: 0.25s;
+}
+
+.add-form.closed {
+    visibility: hidden;
+}
+
+.add-form.open {
+    visibility: visible;
+}
+
+.control-add.open{
+    position: fixed;
+    width: 400px;
+    height: 250px;
+    background: white;
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.control-add::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+input {
+    margin: 10px;
+}
+
+.control-add > .button {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    box-shadow:0 0 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.control-add > .button:hover {
+    background: rgb(228, 228, 228);
+}
+
+.control-add > .button > span {
+    background: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+}
+
+.control-add > .button > span:nth-child(1) {
+    width: 70%;
+    height: 5px;
+}
+
+.control-add > .button > span:nth-child(2) {
+    width: 5px;
+    height: 70%;
+}
+
+.control-add > .button.open {
+    transform: rotate(45deg);
+}
+
+.control-add > .button.closed {
+    transform: rotate(0);
+}
+
+.button-point {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    background: rgb(0, 219, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgb(0, 219, 0);
+    margin: 20px auto 0 auto;
+    cursor: pointer;
+}
+
+.button-point:hover {
+    background: rgb(0, 141, 0);
+    box-shadow: 0 0 15px rgb(0, 141, 0);
 }
